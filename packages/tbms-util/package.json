@@ -15,6 +15,9 @@
     "util"
   ],
   "license": "ISC",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "devDependencies": {
     "@types/jest": "^23.3.14",
     "jest": "^23.6.0",
@@ -25,5 +28,6 @@
   },
   "dependencies": {
     "md5": "^2.2.1"
-  }
+  },
+  "gitHead": "38ccee0a9946b1f4ef89040c50ff68cd23208018"
 }

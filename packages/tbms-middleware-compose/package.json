@@ -15,6 +15,9 @@
     "compose",
     "baseclass"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^23.3.14",
@@ -23,5 +26,6 @@
     "tslint": "^5.12.1",
     "tslint-config-standard": "^8.0.1",
     "typescript": "^3.3.1"
-  }
+  },
+  "gitHead": "38ccee0a9946b1f4ef89040c50ff68cd23208018"
 }
