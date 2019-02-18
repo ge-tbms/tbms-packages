@@ -1,7 +1,7 @@
 {
-  "name": "tbms-sdk",
+  "name": "tbms-middleware-compose",
   "version": "0.0.1",
-  "description": "tbms, sdk",
+  "description": "compose base class uses tbms middleware construction",
   "author": "",
   "main": "build/index.js",
   "scripts": {
@@ -12,13 +12,10 @@
   },
   "keywords": [
     "tbms",
-    "sdk"
+    "compose",
+    "baseclass"
   ],
   "license": "ISC",
-  "dependencies": {
-    "tbms-middleware": "^0.0.1",
-    "tbms-util": "^0.0.1"
-  },
   "devDependencies": {
     "@types/jest": "^23.3.14",
     "jest": "^23.6.0",

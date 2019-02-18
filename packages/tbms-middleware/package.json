@@ -1,8 +1,8 @@
 {
-  "name": "tbms-sdk",
+  "name": "tbms-middleware",
   "version": "0.0.1",
-  "description": "tbms, sdk",
-  "author": "",
+  "description": "the middleware of tbms chat",
+  "author": "matrix ",
   "main": "build/index.js",
   "scripts": {
     "build": "npx tsc --build tsconfig.json -w",
@@ -10,14 +10,12 @@
     "fix": "tslint --fix src/*.ts -t verbose",
     "tslint": "tslint -c tslint.json src/*.ts"
   },
-  "keywords": [
-    "tbms",
-    "sdk"
-  ],
+  "keywords": [ "middlware"  ,"tbms"  ,"chat" ],
   "license": "ISC",
   "dependencies": {
-    "tbms-middleware": "^0.0.1",
-    "tbms-util": "^0.0.1"
+    "tbms-middleware-compose": "^0.0.1",
+    "tbms-util": "^0.0.1",
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "@types/jest": "^23.3.14",

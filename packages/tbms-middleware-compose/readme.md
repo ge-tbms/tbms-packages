@@ -1,6 +1,6 @@
-# tbms-middleware
+# tbms-middleware-compose
 ## 项目描述
-the middleware of tbms chat
+compose base class uses tbms middleware construction
 
 ## License
 
