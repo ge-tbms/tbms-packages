@@ -1,6 +1,6 @@
 {
   "name": "tbms-sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "tbms, sdk",
   "author": "",
   "main": "build/index.js",
@@ -16,8 +16,8 @@
   ],
   "license": "ISC",
   "dependencies": {
-    "tbms-middleware": "^0.0.1",
-    "tbms-util": "^0.0.1"
+    "tbms-middleware": "^0.0.2",
+    "tbms-util": "^0.0.2"
   },
   "devDependencies": {
     "@types/jest": "^23.3.14",
