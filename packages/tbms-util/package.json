@@ -1,6 +1,6 @@
 {
   "name": "tbms-util",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "tbms, util",
   "author": "",
   "main": "build/index.js",
