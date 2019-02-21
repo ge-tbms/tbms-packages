@@ -27,7 +27,7 @@
     "typescript": "^3.3.1"
   },
   "dependencies": {
-    "md5": "^2.2.1"
+    "@types/md5": "^2.1.33"
   },
   "gitHead": "69f78f5cdfc0b1954ef2ab59303c57091a15ea49"
 }
