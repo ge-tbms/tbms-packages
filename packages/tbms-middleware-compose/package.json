@@ -1,6 +1,6 @@
 {
   "name": "tbms-middleware-compose",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "compose base class uses tbms middleware construction",
   "author": "",
   "main": "build/index.js",
