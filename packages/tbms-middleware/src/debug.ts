@@ -1,3 +1,3 @@
-import log from 'tbms-util/build/log'
+import { log } from 'tbms-util'
 
 export default log('tnms-middleware', 'dev')

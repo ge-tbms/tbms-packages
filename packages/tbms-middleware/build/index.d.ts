@@ -1,5 +1,5 @@
 import { ICallback, OptionParam, ContextObject } from './global';
-import EventEmitter from 'tbms-util/build/event';
+import { EventEmitter } from 'tbms-util';
 /**
  * @class 中间件类
  * @description 用于处理消息处理中心，编解码，

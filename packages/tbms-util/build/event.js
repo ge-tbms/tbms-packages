@@ -1,4 +1,3 @@
-"use strict";
 /**
  * ----------------------------------
  * @file event.ts
@@ -7,8 +6,7 @@
  * @create: 2018/12
  * ----------------------------------
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-class EventEmitter {
+export default class EventEmitter {
     constructor() {
         this._eventMap = new Map();
     }
@@ -82,4 +80,3 @@ class EventEmitter {
         return this;
     }
 }
-exports.default = EventEmitter;

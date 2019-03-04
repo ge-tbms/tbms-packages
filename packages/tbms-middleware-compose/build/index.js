@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-function compose(middleware) {
+export default function compose(middleware) {
     if (!Array.isArray(middleware))
         throw new TypeError("Middleware stack must be an array");
     for (const fn of middleware) {
@@ -38,4 +36,3 @@ function compose(middleware) {
         }
     };
 }
-exports.default = compose;

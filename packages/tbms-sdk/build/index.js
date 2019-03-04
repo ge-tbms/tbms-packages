@@ -1,8 +1,3 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * ----------------------------------
  * @file index.ts
@@ -12,8 +7,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * @create: 2018/05
  * ----------------------------------
  */
-const tbms_middleware_1 = __importDefault(require("tbms-middleware"));
-class TBMSSDK extends tbms_middleware_1.default {
+import Middleware from "tbms-middleware";
+export default class TBMSSDK extends Middleware {
     constructor(options) {
         super(options);
         this.options = {
@@ -105,4 +100,3 @@ class TBMSSDK extends tbms_middleware_1.default {
         return this.dispatch({ encodeMessage: message });
     }
 }
-exports.default = TBMSSDK;

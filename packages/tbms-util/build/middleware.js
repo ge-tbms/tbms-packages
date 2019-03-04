@@ -1,13 +1,8 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Promise中间实现
  */
-const util_1 = __importDefault(require("./util"));
-class default_1 {
+import _ from './util';
+export default class {
     constructor(middlewares) {
         this.middlewares = [];
         this.ctx = {
@@ -18,7 +13,7 @@ class default_1 {
         this.middlewares = middlewares;
     }
     useBatch(steps) {
-        if (util_1.default.isArray(steps)) {
+        if (_.isArray(steps)) {
             this.middlewares = this.middlewares.concat(steps);
         }
         else {
@@ -30,7 +25,6 @@ class default_1 {
         let ctx = Object.create(this.ctx);
         ctx.conversation = conversation;
         ctx.message = msg;
-        return util_1.default.promiseMiddleware(steps, ctx);
+        return _.promiseMiddleware(steps, ctx);
     }
 }
-exports.default = default_1;

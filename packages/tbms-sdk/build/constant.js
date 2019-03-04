@@ -1,6 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = {
+export default {
     KICK_OFF: 'KICK_OFF',
     LOGIN_ERROR: 'LOGIN_ERROR',
     LOGIN_SUCCESS: 'LOGIN_SUCCESS',

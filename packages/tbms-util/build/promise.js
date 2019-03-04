@@ -1,4 +1,3 @@
-"use strict";
 /**
  * ----------------------------------
  * @file promise.ts
@@ -7,12 +6,11 @@
  * @create: 2018/05
  * ----------------------------------
  */
-Object.defineProperty(exports, "__esModule", { value: true });
 const resolved = Promise.resolve();
 /**
  * Promise Deferred
  */
-class Deferred {
+export class Deferred {
     constructor() {
         const p = new Promise((resolve, reject) => {
             this.resolve = resolve;
@@ -22,8 +20,7 @@ class Deferred {
         this.catch = p.catch.bind(p);
     }
 }
-exports.Deferred = Deferred;
-exports.promiseQueue = (list) => {
+export const promiseQueue = (list) => {
     let resolved = Promise.resolve({});
     list.forEach((fn, index) => {
         if (typeof fn !== 'function')

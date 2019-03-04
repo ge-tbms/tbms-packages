@@ -1,17 +1,12 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const context_1 = __importDefault(require("./context"));
-const tbms_middleware_compose_1 = __importDefault(require("tbms-middleware-compose"));
-const event_1 = __importDefault(require("tbms-util/build/event"));
+import ProtoContext from './context';
+import compose from 'tbms-middleware-compose';
+import { EventEmitter } from 'tbms-util';
 /**
  * @class 中间件类
  * @description 用于处理消息处理中心，编解码，
  *
  */
-class Middleware extends event_1.default {
+export default class Middleware extends EventEmitter {
     constructor(options) {
         super();
         this.options = {
@@ -19,7 +14,7 @@ class Middleware extends event_1.default {
         };
         this.middleware = [];
         this.options = Object.assign(this.options, options);
-        this.context = Object.create(new context_1.default());
+        this.context = Object.create(new ProtoContext());
     }
     /**
      * 触发函数
@@ -28,7 +23,7 @@ class Middleware extends event_1.default {
     dispatch(val) {
         let context = this.createContext(val);
         context = this.handleContextExternal(context, val);
-        const fnMiddleware = tbms_middleware_compose_1.default(this.middleware);
+        const fnMiddleware = compose(this.middleware);
         return fnMiddleware(context).catch(this.onerror.bind(this));
     }
     /**
@@ -83,4 +78,3 @@ class Middleware extends event_1.default {
         });
     }
 }
-exports.default = Middleware;

@@ -1,3 +1,3 @@
 declare module 'tbms-middleware'
-declare module 'tbms-util/*'
+declare module 'tbms-util'
 
