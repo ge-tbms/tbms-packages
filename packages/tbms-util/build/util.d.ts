@@ -16,7 +16,9 @@ declare const getQueryParamByName: (url: string, name: string) => string | null;
 declare const promiseMiddleware: (middlewares: any[], ctx: any) => Promise<any>;
 declare const addStyle: (styleString: string) => void;
 declare const objectMapQuery: (obj: any) => string;
-export { generateId, isArray, isObject, isString, md5, getQueryParam, getQueryParamByName, promiseMiddleware, addStyle, objectMapQuery };
+declare const getImageDimension: (url: string) => Promise<{}>;
+declare const scrollDocumentTitle: () => (title: string) => any;
+export { generateId, isArray, isObject, isString, md5, getQueryParam, getQueryParamByName, promiseMiddleware, addStyle, objectMapQuery, scrollDocumentTitle, getImageDimension };
 declare const _default: {
     generateId: (conversationId: number) => any;
     isArray: (object: object) => boolean;
@@ -28,5 +30,7 @@ declare const _default: {
     promiseMiddleware: (middlewares: any[], ctx: any) => Promise<any>;
     addStyle: (styleString: string) => void;
     objectMapQuery: (obj: any) => string;
+    scrollDocumentTitle: () => (title: string) => any;
+    getImageDimension: (url: string) => Promise<{}>;
 };
 export default _default;

@@ -82,6 +82,50 @@ const objectMapQuery = (obj: any) => {
 }
 
 
+const getImageDimension = (url: string) => {
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.addEventListener('load', (event:any) => {
+      resolve({
+        height: event.target.height,
+        width: event.target.width
+      })
+    })
+    image.addEventListener('error', () => {
+      reject({
+        height: null,
+        width: null
+      })
+    })
+
+    image.src = url;
+  })
+}
+
+
+const scrollDocumentTitle = () => {
+  let timer:any = null;
+  return (title: string) => {
+    clearTimeout(timer);
+    let innerTitle = '';
+    let isFirst = true;
+    timer = setInterval(function () {
+      if (isFirst) {
+        isFirst = false;
+        innerTitle = title;
+      } else {
+        innerTitle = document.title
+      }
+
+      document.title = innerTitle.substr(1) + innerTitle.substr(0, 1);
+
+    }, 500);
+
+    return timer;
+  }
+}
+
+
 export {
   generateId,
   isArray,
@@ -92,7 +136,9 @@ export {
   getQueryParamByName,
   promiseMiddleware,
   addStyle,
-  objectMapQuery
+  objectMapQuery,
+  scrollDocumentTitle,
+  getImageDimension
 }
 
 export default {
@@ -105,5 +151,7 @@ export default {
   getQueryParamByName,
   promiseMiddleware,
   addStyle,
-  objectMapQuery
+  objectMapQuery,
+  scrollDocumentTitle,
+  getImageDimension
 }
