@@ -27,7 +27,10 @@
     "typescript": "^3.3.1"
   },
   "dependencies": {
-    "@types/md5": "^2.1.33"
+    "@types/md5": "^2.1.33",
+    "md5": "^2.2.1",
+    "@types/lodash": "^4.14.119",
+    "lodash": "^4.17.11"
   },
   "gitHead": "69f78f5cdfc0b1954ef2ab59303c57091a15ea49"
 }
