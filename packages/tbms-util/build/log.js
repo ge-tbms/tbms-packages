@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * 日志函数
  * @param {String} app  应用名称
@@ -16,7 +18,7 @@
  * ```
  */
 const ConsoleConfig = ["debug", "error", "info", "log", "warn", "dir", "dirxml", "table", "trace", "group", "groupCollapsed", "groupEnd", "clear", "count", "countReset", "assert", "profile", "profileEnd", "time", "timeLog", "timeEnd", "timeStamp", "context", "memory"];
-export default function debug(app, env = 'prod') {
+function debug(app, env = 'prod') {
     let _console = {};
     const config = [{
             type: 'log',
@@ -42,3 +44,4 @@ export default function debug(app, env = 'prod') {
     }
     return _console;
 }
+exports.default = debug;

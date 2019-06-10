@@ -1,3 +1,8 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * ----------------------------------
  * @file util.ts
@@ -6,24 +11,29 @@
  * @create: 2018/05
  * ----------------------------------
  */
-import md5 from 'md5';
+const md5_1 = __importDefault(require("md5"));
+exports.md5 = md5_1.default;
 const generateId = (conversationId) => {
     const time = +new Date();
     const S4 = function () {
         return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
     };
     const seed = (S4() + '-' + S4() + '-' + S4() + '-' + S4());
-    return md5(conversationId + '-' + time + '-' + seed);
+    return md5_1.default(conversationId + '-' + time + '-' + seed);
 };
+exports.generateId = generateId;
 const isArray = (object) => {
     return Object.prototype.toString.call(object).substr(8, 5) === 'Array';
 };
+exports.isArray = isArray;
 const isObject = (object) => {
     return Object.prototype.toString.call(object).substr(8, 6) === 'Object';
 };
+exports.isObject = isObject;
 const isString = (object) => {
     return Object.prototype.toString.call(object).substr(8, 6) === 'String';
 };
+exports.isString = isString;
 const getQueryParam = (qs) => {
     qs = qs.split('+').join(' ');
     let params = {};
@@ -34,12 +44,14 @@ const getQueryParam = (qs) => {
     }
     return params;
 };
+exports.getQueryParam = getQueryParam;
 const getQueryParamByName = (url, name) => {
     if (!url)
         url = location && location.search;
     const match = RegExp('[?&]' + name + '=([^&]*)').exec(url);
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 };
+exports.getQueryParamByName = getQueryParamByName;
 const promiseMiddleware = (middlewares, ctx) => {
     let promise = Promise.resolve(null);
     let next;
@@ -54,12 +66,14 @@ const promiseMiddleware = (middlewares, ctx) => {
         return ctx;
     });
 };
+exports.promiseMiddleware = promiseMiddleware;
 const addStyle = (styleString) => {
     let style = document.createElement('style');
     style.type = 'text/css';
     style.innerHTML = styleString;
     document.getElementsByTagName('head')[0].appendChild(style);
 };
+exports.addStyle = addStyle;
 const objectMapQuery = (obj) => {
     let ret = [];
     for (let key in obj) {
@@ -67,6 +81,7 @@ const objectMapQuery = (obj) => {
     }
     return ret.join('&');
 };
+exports.objectMapQuery = objectMapQuery;
 const getImageDimension = (url) => {
     return new Promise((resolve, reject) => {
         const image = new Image();
@@ -85,6 +100,7 @@ const getImageDimension = (url) => {
         image.src = url;
     });
 };
+exports.getImageDimension = getImageDimension;
 const scrollDocumentTitle = () => {
     let timer = null;
     return (title) => {
@@ -104,13 +120,13 @@ const scrollDocumentTitle = () => {
         return timer;
     };
 };
-export { generateId, isArray, isObject, isString, md5, getQueryParam, getQueryParamByName, promiseMiddleware, addStyle, objectMapQuery, scrollDocumentTitle, getImageDimension };
-export default {
+exports.scrollDocumentTitle = scrollDocumentTitle;
+exports.default = {
     generateId,
     isArray,
     isObject,
     isString,
-    md5,
+    md5: md5_1.default,
     getQueryParam,
     getQueryParamByName,
     promiseMiddleware,

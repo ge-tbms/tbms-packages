@@ -1,12 +1,17 @@
-import ProtoContext from './context';
-import compose from 'tbms-middleware-compose';
-import { EventEmitter } from 'tbms-util';
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const context_1 = __importDefault(require("./context"));
+const tbms_middleware_compose_1 = __importDefault(require("tbms-middleware-compose"));
+const tbms_util_1 = require("tbms-util");
 /**
  * @class 中间件类
  * @description 用于处理消息处理中心，编解码，
  *
  */
-export default class Middleware extends EventEmitter {
+class Middleware extends tbms_util_1.EventEmitter {
     constructor(options) {
         super();
         this.options = {
@@ -14,7 +19,7 @@ export default class Middleware extends EventEmitter {
         };
         this.middleware = [];
         this.options = Object.assign(this.options, options);
-        this.context = Object.create(new ProtoContext());
+        this.context = Object.create(new context_1.default());
     }
     /**
      * 触发函数
@@ -23,7 +28,7 @@ export default class Middleware extends EventEmitter {
     dispatch(val) {
         let context = this.createContext(val);
         context = this.handleContextExternal(context, val);
-        const fnMiddleware = compose(this.middleware);
+        const fnMiddleware = tbms_middleware_compose_1.default(this.middleware);
         return fnMiddleware(context).catch(this.onerror.bind(this));
     }
     /**
@@ -39,15 +44,6 @@ export default class Middleware extends EventEmitter {
      */
     createContext(val) {
         const ctx = Object.create(this.context);
-        // if (val.message) {
-        //   ctx.message = val.message
-        // }
-        // if (val.systemMessage) {
-        //   ctx.systemMessage = val.systemMessage
-        // }
-        // if (val.error) {
-        //   ctx.error = val.error
-        // }
         return Object.assign(ctx, val);
     }
     /**
@@ -78,3 +74,4 @@ export default class Middleware extends EventEmitter {
         });
     }
 }
+exports.default = Middleware;

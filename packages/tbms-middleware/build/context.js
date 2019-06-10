@@ -1,5 +1,10 @@
-import findIndex from "lodash/findIndex";
-import debug from './debug';
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const findIndex_1 = __importDefault(require("lodash/findIndex"));
+const debug_1 = __importDefault(require("./debug"));
 /**
  * 执行上下文
  * @class Proto
@@ -17,13 +22,13 @@ class Proto {
         if (!val.id)
             throw new TypeError("message must has id element!");
         this._message = val;
-        const index = findIndex(this.messages, { id: val.id });
+        const index = findIndex_1.default(this.messages, { id: val.id });
         if (index === -1) {
             this.messages.push(val);
         }
         else {
             this.messages[index] = val;
-            debug.warn(`Duplicate Message and Update`, val, index);
+            // debug.warn(`Duplicate Message and Update`, val, index)
         }
     }
     get message() {
@@ -33,17 +38,17 @@ class Proto {
         if (!val.id)
             throw new TypeError("message must has id element!");
         this._systemMessage = val;
-        const index = findIndex(this.systemMessages, { id: val.id });
+        const index = findIndex_1.default(this.systemMessages, { id: val.id });
         if (index === -1) {
             this.systemMessages.push(val);
         }
         else {
             this.systemMessages[index] = val;
-            debug.warn(`Duplicate Message and Update`, val, index);
+            debug_1.default.warn(`Duplicate Message and Update`, val, index);
         }
     }
     get systemMessage() {
         return this._systemMessage;
     }
 }
-export default Proto;
+exports.default = Proto;

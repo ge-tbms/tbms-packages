@@ -2,6 +2,7 @@ import findIndex from "lodash/findIndex";
 import { MessageObject } from "./global";
 import debug from './debug'
 
+
 /**
  * 执行上下文
  * @class Proto
@@ -23,7 +24,7 @@ class Proto {
       this.messages.push(val);
     } else {
       this.messages[index] = val;
-      debug.warn(`Duplicate Message and Update`, val, index)
+      // debug.warn(`Duplicate Message and Update`, val, index)
     }
   }
   get message() {

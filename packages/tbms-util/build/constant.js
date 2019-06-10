@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const MSG_EVENT_CONSTANT = {
     KICK_OFF: 'KICK_OFF',
     LOGIN_ERROR: 'LOGIN_ERROR',
@@ -12,4 +14,4 @@ const MSG_EVENT_CONSTANT = {
     NETWORK_CLOSE: 'NETWORK_CLOSE',
     NETWORK_RECONNECT: 'NETWORK_RECONNECT'
 };
-export { MSG_EVENT_CONSTANT };
+exports.MSG_EVENT_CONSTANT = MSG_EVENT_CONSTANT;

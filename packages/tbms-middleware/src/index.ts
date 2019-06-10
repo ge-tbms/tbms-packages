@@ -44,16 +44,6 @@ export default class Middleware extends EventEmitter{
    */
   createContext(val: ContextObject) {
     const ctx = Object.create(this.context);
-    // if (val.message) {
-    //   ctx.message = val.message
-    // }
-    // if (val.systemMessage) {
-    //   ctx.systemMessage = val.systemMessage
-    // }
-    // if (val.error) {
-    //   ctx.error = val.error
-    // }
-
     return Object.assign(ctx, val);
   }
 
