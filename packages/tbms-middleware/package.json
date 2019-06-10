@@ -1,6 +1,6 @@
 {
   "name": "tbms-middleware",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "the middleware of tbms chat",
   "author": "matrix ",
   "main": "build/index.js",
@@ -20,8 +20,8 @@
   },
   "license": "ISC",
   "dependencies": {
-    "tbms-middleware-compose": "^0.0.6",
-    "tbms-util": "^0.0.7"
+    "tbms-middleware-compose": "^0.0.7",
+    "tbms-util": "^0.0.8"
   },
   "devDependencies": {
     "@types/jest": "^23.3.14",
